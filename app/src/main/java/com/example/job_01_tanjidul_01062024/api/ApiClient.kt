@@ -1,4 +1,4 @@
-package com.example.job_01_tanjidul_01062024.Api
+package com.example.job_01_tanjidul_01062024.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

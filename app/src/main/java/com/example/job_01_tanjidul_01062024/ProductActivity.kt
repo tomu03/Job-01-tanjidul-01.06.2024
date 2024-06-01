@@ -7,7 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.job_01_tanjidul_01062024.ViewModel.ProductViewModel
+import com.example.job_01_tanjidul_01062024.viewModel.ProductViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ProductActivity : AppCompatActivity() {

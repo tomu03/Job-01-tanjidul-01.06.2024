@@ -1,6 +1,6 @@
-package com.example.job_01_tanjidul_01062024.Api
+package com.example.job_01_tanjidul_01062024.api
 
-import com.example.job_01_tanjidul_01062024.Product
+import com.example.job_01_tanjidul_01062024.model.Product
 import retrofit2.http.GET
 
 interface ApiService {

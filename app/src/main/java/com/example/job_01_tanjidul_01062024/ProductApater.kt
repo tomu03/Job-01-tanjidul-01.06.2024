@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.job_01_tanjidul_01062024.model.Product
 
 class ProductApater(private val products:List<Product>): RecyclerView.Adapter<ProductApater.ProductViewHolder>() {
     inner class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){

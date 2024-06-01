@@ -1,11 +1,11 @@
-package com.example.job_01_tanjidul_01062024.ViewModel
+package com.example.job_01_tanjidul_01062024.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.job_01_tanjidul_01062024.Api.ApiClient.apiService
-import com.example.job_01_tanjidul_01062024.Product
+import com.example.job_01_tanjidul_01062024.api.ApiClient.apiService
+import com.example.job_01_tanjidul_01062024.model.Product
 import kotlinx.coroutines.launch
 
 class ProductViewModel:ViewModel() {
