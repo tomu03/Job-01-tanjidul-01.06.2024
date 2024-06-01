@@ -1,12 +1,14 @@
-package com.example.job_01_tanjidul_01062024
+package com.example.job_01_tanjidul_01062024.ViewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.job_01_tanjidul_01062024.Api.ApiClient.apiService
+import com.example.job_01_tanjidul_01062024.Product
 import kotlinx.coroutines.launch
 
-class ProductViewModel: ViewModel() {
+class ProductViewModel:ViewModel() {
 
     private val _products = MutableLiveData<List<Product>>()
     val products: LiveData<List<Product>> get() = _products

@@ -1,20 +1,44 @@
 package com.example.job_01_tanjidul_01062024
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.job_01_tanjidul_01062024.ViewModel.ProductViewModel
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ProductActivity : AppCompatActivity() {
+
+    private lateinit var productViewModel: ProductViewModel
+    private lateinit var productAdapter: ProductApater
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_product)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        productViewModel = ViewModelProvider(this).get(ProductViewModel::class.java)
+        productAdapter = ProductApater(emptyList())
+
+        val refreshBtn: FloatingActionButton = findViewById(R.id.refresBtn)
+
+        refreshBtn.setOnClickListener {
+            startActivity(Intent(this, ProductActivity::class.java))
+            finish()
         }
+
+
+        val recyclerView: RecyclerView = findViewById(R.id.productRv)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = productAdapter
+
+        productViewModel.products.observe(this, Observer { products ->
+            products?.let {
+                productAdapter = ProductApater(it)
+                recyclerView.adapter = productAdapter
+            }
+        })
+
     }
 }
